@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Test</title>
+  <link rel="stylesheet" href="">
+  <style type="text/css">
+    html,
+    body {
+      height: 100%;
+    }
+
+    .container {
+      margin: auto;
+      position: relative;
+      width: 100%;
+    }
+
+    p {
+      cursor: pointer;
+      font-size: 12px;
+      margin: auto;
+      padding: 10px 10px 10px 10px;
+      width: 190px;
+      border: 2px solid red;
+      text-align: center;
+    }
+
+    button {
+      cursor: pointer;
+      padding: 10px;
+      position: relative;
+      margin: auto;
+      width: 100px;
+      top: 40px;
+      left: 90px;
+      right: auto;
+      align-content: center;
+      border: 2px ridge;
+      border-color: chocolate;
+      text-decoration: double;
+    }
+
+    a {
+      position: relative;
+      display: block;
+      align-content: center;
+      text-decoration: none;
+      text-align: center;
+      font-size: 48pt;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <script type="text/javascript">
+    $(document).ready(() => {
+      $("#btn").click(() => {
+        $("#smoke").css('font-size', "+=10").text(function () {
+          return $(this).text().replace("good", "bad");
+        });
+        $(".container").append("<a id='anc'>");
+        $(this).prop("disabled", true);
+        $(this).queue(() => {
+          setTimeout(() => {
+            $("#btn, #smoke").hide();
+            $("#anc").text("Rehab");
+            $("#anc").attr({
+              'href': 'https://www.okana.gr/',
+              'target': '_blank'
+            });
+          }, 2000);
+        });
+      });
+    });
+  </script>
+  <div class="container" id="main">
+    <button id="btn">click</button>
+    <p id="smoke">Smoking is good for you.</p>
+  </div>
+</body>
+
+</html>
